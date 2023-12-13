@@ -14,6 +14,10 @@ Motorized wheel chairs are ubiqutous everyewhere. A smart obstacle monitoring an
 ## Purpose
 To build a smart motion aniticiplation and correction system using ROS2 and Depth sensors that can be retro fitted to commercially available motorized wheel chairs.
 
+## Design
+### Simulation model
+![alt text](./images/SimulationDesign.png)
+
 ## Technologies and Libraries
 The module will be developed using the following technologies:
 - Programming Language: C++11/14
