@@ -1,16 +1,3 @@
-# WheelChair
-
-## To enable multi pc communication of ROS2
-```
-sudo ufw allow in proto udp from 10.42.0.1/24
-```
-
-## Procedure to install Cartographer
-```
-sudo apt install ros-galactic-cartographer
-sudo apt install ros-galactic-cartographer-ros
-```
-
 # Smart WheelChair
 
 # Team Members:
@@ -44,10 +31,7 @@ The following REP's are referred:
 - ROS REP105
 - ROS REP103
 
-
-## API and Other Developer Documnetation
-
-### How to build
+## How to build
 ``` bash
 # Cloning the repository
   git clone --recurse-submodules <repo-link>
@@ -66,7 +50,7 @@ The following REP's are referred:
 #
 ```
 
-### How to run the simulation
+## How to run the simulation
 ```bash
 # source repositories
 source /opt/ros/humble/setup.bash
@@ -79,7 +63,7 @@ ros2 run wheel_chair_sim gazebo_nav.launch.py
 ```
 
 
-### How to run on hardware
+## How to run on hardware
 ```bash
 # source repositories
 source /opt/ros/humble/setup.bash
@@ -89,11 +73,21 @@ source ./install/setup.bash
 
 # run launch file for lidar
 ros2 run wheel_chair wheelchair_odom.launch.py two_d_mode:=true
-ros2 run wheel_chair wheelchair_nav.launch.py 
+ros2 run wheel_chair wheelchair_nav.launch.py
 
 # run launch file for depth camera
 ros2 run wheel_chair wheelchair_odom.launch.py three_d_mode:=true
-ros2 run wheel_chair wheelchair_nav.launch.py 
+ros2 run wheel_chair wheelchair_nav.launch.py
 ```
 
+## Miscellaneous points
+#### 1. To enable multi pc communication of ROS2
+```
+sudo ufw allow in proto udp from 10.42.0.1/24
+```
 
+#### 2. Procedure to install Cartographer
+```
+sudo apt install ros-galactic-cartographer
+sudo apt install ros-galactic-cartographer-ros
+```
