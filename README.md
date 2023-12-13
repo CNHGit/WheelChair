@@ -18,6 +18,9 @@ To build a smart motion aniticiplation and correction system using ROS2 and Dept
 ### Simulation model
 ![alt text](./images/SimulationDesign.png)
 
+### Device Software Stack
+![alt text](./images/SoftwareStack.png)
+
 ## Technologies and Libraries
 The module will be developed using the following technologies:
 - Programming Language: C++11/14
