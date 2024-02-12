@@ -54,10 +54,19 @@ sudo apt install python3-colcon-common-extensions
 ----------------------------------------------------
 # Note : The wheel_chair library depends on the serial-ros2 package for serial communication.
 
-# Original serial-ros2 link:
-https://github.com/RoverRobotics-forks/serial-ros2
+# clone the  serial-ros2 from the below repository into the "/src" directory
+git clone https://github.com/RoverRobotics-forks/serial-ros2
 
-# The serial-ros2 library avaialble in this repository has been modified for linking with shared library by adding the following flag to "./serial-ros2/cmakeLists.txt"
+# The serial-ros2 library need to be modified for linking with shared library by adding the following flag to "./src/serial-ros2/cmakeLists.txt"
+target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)
+
+# For example add the above line under the 'add_library' section as shown below
+
+# add_library(${PROJECT_NAME}
+#     src/serial.cc
+#     include/serial/serial.h
+#     include/serial/v8stdint.h
+# )
 target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)
 ----------------------------------------------------
 
