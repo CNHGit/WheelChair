@@ -48,6 +48,7 @@ using std::vector;
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 
+using namespace hardware_interface;
 
 namespace wheel_chair
 {
@@ -74,9 +75,9 @@ namespace wheel_chair
       CallbackReturn on_configure(
         const rclcpp_lifecycle::State & previous_state) override;
 
-      hardware_interface::return_type read() override;
+      hardware_interface::return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
-      hardware_interface::return_type write() override;
+      hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
     private:
       // Parameters for the wheel_chair simulation

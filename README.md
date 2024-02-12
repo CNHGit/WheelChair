@@ -38,22 +38,38 @@ The following REP's are referred:
 - ROS REP105
 - ROS REP103
 
+
+
+## Install build dependancies
+```bash
+# Install ROS Humble desktop
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+
+# Install Hardware Interfaces
+sudo apt install ros-humble-desktop
+
+# Install colcon packages
+sudo apt install python3-colcon-common-extensions
+
+----------------------------------------------------
+# Note : The wheel_chair library depends on the serial-ros2 package for serial communication.
+
+# Original serial-ros2 link:
+https://github.com/RoverRobotics-forks/serial-ros2
+
+# The serial-ros2 library avaialble in this repository has been modified for linking with shared library by adding the following flag to "./serial-ros2/cmakeLists.txt"
+target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)
+----------------------------------------------------
+
+```
+
 ## How to build
 ``` bash
 # Cloning the repository
-  git clone --recurse-submodules <repo-link>
-# Configure the project and generate a native build system:
-  # Must re-run this command whenever any CMakeLists.txt file has been changed.
-  cmake -S ./ -B build/
-# Compile and build the project:
-  # rebuild only files that are modified since the last build
-  cmake --build build/
-  # or rebuild everything from scracth
-  cmake --build build/ --clean-first
-  # to see verbose output, do:
-  cmake --build build/ --verbose
-# Clean and start over:
-  rm -rf build/
+  git clone <repo-link>
+# Run the build 
+  colcon build
+  
 #
 ```
 
