@@ -46,7 +46,7 @@ The following REP's are referred:
 https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 
 # Install Hardware Interfaces
-sudo apt install ros-humble-desktop
+sudo apt install ros-humble-hardware-interface
 
 # Install colcon packages
 sudo apt install python3-colcon-common-extensions
