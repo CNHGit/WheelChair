@@ -51,6 +51,11 @@ sudo apt install ros-humble-hardware-interface
 # Install colcon packages
 sudo apt install python3-colcon-common-extensions
 
+# Cloning the repository
+  git clone <repo-link>
+# Run the build 
+  colcon build
+
 ----------------------------------------------------
 # Note : The wheel_chair library depends on the serial-ros2 package for serial communication.
 
@@ -70,16 +75,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)
 target_compile_options(${PROJECT_NAME} PRIVATE -fPIC)
 ----------------------------------------------------
 
-```
-
-## How to build
-``` bash
-# Cloning the repository
-  git clone <repo-link>
-# Run the build 
-  colcon build
-  
-#
 ```
 
 ## How to run the simulation
