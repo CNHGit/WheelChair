@@ -86,7 +86,7 @@ source /opt/ros/humble/setup.bash
 source ./install/setup.bash
 
 # run simulation launch file
-ros2 run wheel_chair_sim gazebo_nav.launch.py
+ros2 launch wheel_chair_sim gazebo_nav.launch.py
 ```
 
 
