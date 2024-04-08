@@ -203,7 +203,7 @@ CallbackReturn WheelChairSystemHardware::on_deactivate(
   return CallbackReturn::SUCCESS;
 }
 
-hardware_interface::return_type WheelChairSystemHardware::read(const rclcpp::Time & time, const rclcpp::Duration & period)
+hardware_interface::return_type WheelChairSystemHardware::read()
 {
   double SCALE_FACTOR = 10000;
 
@@ -271,7 +271,7 @@ hardware_interface::return_type WheelChairSystemHardware::read(const rclcpp::Tim
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type WheelChairSystemHardware::write(const rclcpp::Time & time, const rclcpp::Duration & period)
+hardware_interface::return_type WheelChairSystemHardware::write()
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("WheelChairSystemHardware"), "Writing...");
