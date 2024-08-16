@@ -99,12 +99,12 @@ source /opt/ros/humble/setup.bash
 source ./install/setup.bash
 
 # run launch file for lidar
-ros2 run wheel_chair wheelchair_odom.launch.py two_d_mode:=true
-ros2 run wheel_chair wheelchair_nav.launch.py
+ros2 launch wheel_chair wheelchair_odom.launch.py two_d_slam:=true three_d_slam:=false
+ros2 launch wheel_chair wheelchair_nav.launch.py
 
 # run launch file for depth camera
-ros2 run wheel_chair wheelchair_odom.launch.py three_d_mode:=true
-ros2 run wheel_chair wheelchair_nav.launch.py
+ros2 launch wheel_chair wheelchair_odom.launch.py two_d_slam:=false three_d_slam:=true
+ros2 launch wheel_chair wheelchair_nav.launch.py
 ```
 
 ## Miscellaneous points
