@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheel_chair_robot">
   <xacro:arg name="prefix" default="" />
 
-  <xacro:include filename="$(find wheel_chair)/urdf/wheel_chair_description_gazebo.urdf.xacro" />
+  <xacro:include filename="$(find wheel_chair)/urdf/wheel_chair_description.urdf.xacro" />
 
 
   <!-- Import diffbot ros2_control description -->
