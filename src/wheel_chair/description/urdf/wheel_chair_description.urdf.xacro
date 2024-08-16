@@ -122,7 +122,7 @@
       </geometry>
     </collision>
 
-    <xacro:sphere_inertia m="0.5" r="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
+    <xacro:sphere_inertia m="0.01" r="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
 
   </link>
 
