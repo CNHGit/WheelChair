@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot name="wheel_chair" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="wheel_chair" params="prefix">
-
 <!-- Define robot constants -->
   <xacro:property name="base_width" value="0.50"/>
   <xacro:property name="base_length" value="0.62"/>
