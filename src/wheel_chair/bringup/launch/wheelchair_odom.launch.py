@@ -104,7 +104,7 @@ def generate_launch_description():
     ld.add_action(perception_rplidar_launch)
     ld.add_action(slam_rplidar_launch)
     ld.add_action(slam_rplidar_octomap_launch)
-    ld.add_action(perception_realsense_launch)
-    ld.add_action(slam_realsense_launch)
+    # ld.add_action(perception_realsense_launch)
+    # ld.add_action(slam_realsense_launch)
 
     return ld
