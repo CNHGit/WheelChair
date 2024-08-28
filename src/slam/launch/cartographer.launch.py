@@ -52,7 +52,7 @@ def generate_launch_description():
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
         arguments=['-configuration_directory', LaunchConfiguration('cartographer_config_dir'),
                 '-configuration_basename', LaunchConfiguration('configuration_basename')],
-        remappings=[('/odom', '/laser/odom')])
+        remappings=[('/odom', '/laser_odom')])
 
     pose_to_odom = Node(
         package="wheel_chair",
