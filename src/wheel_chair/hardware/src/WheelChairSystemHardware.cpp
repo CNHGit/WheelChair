@@ -244,8 +244,8 @@ hardware_interface::return_type WheelChairSystemHardware::read()
   hw_velocities_[0] = (LEFT_WHEEL_DIR*-2+1)*(LeftWheelVel*1.0)/SCALE_FACTOR;
   hw_velocities_[1] = (RIGHT_WHEEL_DIR*-2+1)*(RightWheelVel*1.0)/SCALE_FACTOR;
 
-  hw_velocities_[0] = hw_velocities_[0]/1000;
-  hw_velocities_[1] = hw_velocities_[1]/1000;
+  // hw_velocities_[0] = hw_velocities_[0]/1000;
+  // hw_velocities_[1] = hw_velocities_[1]/1000;
 
     for (auto i = 0u; i < hw_commands_.size(); i++)
   {
