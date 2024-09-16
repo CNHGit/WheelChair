@@ -29,7 +29,6 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/rclcpp.hpp"
-// #include "wheel_chair/PoseToOdom.hpp"
 
 using std::placeholders::_1;
 
