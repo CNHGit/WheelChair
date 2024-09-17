@@ -56,7 +56,7 @@ def generate_launch_description():
 
     pose_to_odom = Node(
         package="wheel_chair",
-        executable="PoseToOdom"
+        executable="pose_to_odom"
     )
 
     # Delay rviz start after `joint_state_broadcaster`

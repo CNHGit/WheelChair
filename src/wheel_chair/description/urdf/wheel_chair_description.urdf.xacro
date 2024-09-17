@@ -132,7 +132,7 @@
     <origin xyz="${caster_xoff} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
   </joint>
 
-
+<!-- 
 <link name="imu_link">
   <visual>
     <geometry>
@@ -154,7 +154,7 @@
   <parent link="base_link"/>
   <child link="imu_link"/>
   <origin xyz="0 0 0.01"/>
-</joint>
+</joint> -->
 
   </xacro:macro>
   
