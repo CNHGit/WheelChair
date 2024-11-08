@@ -34,7 +34,7 @@ def generate_launch_description():
 
     lifecycle_nodes = ['controller_server',
                        'planner_server',
-                       'recoveries_server',
+                       'behavior_server',
                        'bt_navigator']
                     #    'waypoint_follower']
 
