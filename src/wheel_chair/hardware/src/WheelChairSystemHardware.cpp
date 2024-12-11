@@ -54,9 +54,9 @@ CallbackReturn WheelChairSystemHardware::on_init(
     }
 
 
-    hw_positions_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
-    hw_velocities_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
-    hw_commands_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
+    hw_positions_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());    // Encoder values RECEIVED from the MCU
+    hw_velocities_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());   // Velocity values converted from the encoder readings
+    hw_commands_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());     // Commands to be sent to the MCU 
 
     for (const hardware_interface::ComponentInfo & joint : info_.joints)
     {
