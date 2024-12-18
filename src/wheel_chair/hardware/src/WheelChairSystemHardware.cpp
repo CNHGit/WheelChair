@@ -38,7 +38,7 @@ CallbackReturn WheelChairSystemHardware::on_init(
       }
 
 
-
+    // Create serial port object and open actual port for communication
     base_port = std::make_shared<serial::Serial>("/dev/ttyACM0", 115200, serial::Timeout::simpleTimeout(1000));
     if(base_port->isOpen()){
         RCLCPP_FATAL(
@@ -60,7 +60,7 @@ CallbackReturn WheelChairSystemHardware::on_init(
 
     for (const hardware_interface::ComponentInfo & joint : info_.joints)
     {
-      // DiffBotSystem has exactly two states and one cwheel_chair.urdfommand interface on each joint
+      // DiffBotSystem has exactly two states and one wheel_chair.urdf command interface on each joint
       if (joint.command_interfaces.size() != 1)
       {
         RCLCPP_FATAL(
@@ -110,6 +110,9 @@ CallbackReturn WheelChairSystemHardware::on_init(
     return CallbackReturn::SUCCESS;
 }
 
+
+// Check these 2 functions
+
 std::vector<hardware_interface::StateInterface> WheelChairSystemHardware::export_state_interfaces()
 {
   std::vector<hardware_interface::StateInterface> state_interfaces;
@@ -135,6 +138,8 @@ std::vector<hardware_interface::CommandInterface> WheelChairSystemHardware::expo
 
   return command_interfaces;
 }
+
+// Check these 2 functions
 
 CallbackReturn WheelChairSystemHardware::on_configure(
   const rclcpp_lifecycle::State & previous_state)
@@ -232,7 +237,7 @@ hardware_interface::return_type WheelChairSystemHardware::read(const rclcpp::Tim
   LeftWheelVel = (LeftWheelVel << 8 | BASE_STATE[14]);
   LeftWheelVel = (LeftWheelVel << 8 | BASE_STATE[15]);
 
-  uint8_t RIGHT_WHEEL_DIR = BASE_STATE[16];
+  uint8_t RIGHT_WHEEL_DIR = BASE_STATE[11];
   uint32_t RightWheelVel = BASE_STATE[17];
   RightWheelVel = (RightWheelVel << 8 | BASE_STATE[18]);
   RightWheelVel = (RightWheelVel << 8 | BASE_STATE[19]);
