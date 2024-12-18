@@ -50,7 +50,7 @@ def generate_launch_description():
 
     remappings = [('/tf', 'tf'),
                   ('/tf_static', 'tf_static')]
-                  # ("/cmd_vel", "/wheel_chair_base_controller/cmd_vel_unstamped")]
+                  ("/cmd_vel", "/wheel_chair_base_controller/cmd_vel_unstamped")]
 
     # Create our own temporary YAML files that include substitutions
     param_substitutions = {
