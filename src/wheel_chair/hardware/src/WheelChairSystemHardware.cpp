@@ -210,7 +210,7 @@ CallbackReturn WheelChairSystemHardware::on_deactivate(
 
 hardware_interface::return_type WheelChairSystemHardware::read(const rclcpp::Time & time, const rclcpp::Duration & period)
 {
-  double SCALE_FACTOR = 10000;
+  double SCALE_FACTOR = 10000;    // Change complementary WRITE_STATE_SCALE_FACTOR value in mcu code when changing here
 
   uint8_t BASE_COMMAND_READ_STATE[8] = {0x1F, 0xA8, 0x01, 0x20, 0x01, 0x01 ,0x1F, 0xA9};
   std::vector<uint8_t> read_command(BASE_COMMAND_READ_STATE, BASE_COMMAND_READ_STATE + sizeof(BASE_COMMAND_READ_STATE) / sizeof(BASE_COMMAND_READ_STATE[0]) );
