@@ -8,7 +8,7 @@ def generate_launch_description():
     #Define Path varialbes
     pkg_share = launch_ros.substitutions.FindPackageShare(package='wheel_chair').find('wheel_chair')
     default_model_path = os.path.join(pkg_share, 'urdf/wheel_chair.urdf.xacro')
-    default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+    default_rviz_config_path = os.path.join(pkg_share, 'rviz/nav.rviz')
 
 
 
