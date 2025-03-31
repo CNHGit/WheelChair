@@ -2,9 +2,9 @@
 
 # Team Members:
 
-- Prof. Reza Monferedi
+- Nishad Kulkarni
 
-- Tej Kiran
+- Prof. Reza Monferedi
 
 # Project Overview:
 
@@ -102,6 +102,8 @@ source ./install/setup.bash
 ros2 launch wheel_chair wheelchair_odom.launch.py two_d_slam:=true three_d_slam:=false
 ros2 launch wheel_chair wheelchair_nav.launch.py
 ros2 launch wheel_chair display.launch.py
+
+ros2 run teleoperation wheel_teleop --ros-args --remap turtle1/cmd_vel:=/wheel_chair_base_controller/cmd_vel_unstamped
 
 # run launch file for depth camera
 ros2 launch wheel_chair wheelchair_odom.launch.py two_d_slam:=false three_d_slam:=true

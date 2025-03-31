@@ -205,9 +205,11 @@ public:
 
     puts("Reading from keyboard");
     puts("---------------------------");
-    puts("Use arrow keys to move the turtle.");
-    puts("Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.");
+    puts("Use arrow keys to move the robot.");
+    puts("Use S key to absolute stop.");
     puts("'Q' to quit.");
+    double linear = 0.0;
+    double angular = 0.0;
 
     while (running)
     {
@@ -222,8 +224,6 @@ public:
         return -1;
       }
 
-      double linear = 0.0;
-      double angular = 0.0;
 
       RCLCPP_DEBUG(nh_->get_logger(), "value: 0x%02X\n", c);
 
@@ -231,59 +231,30 @@ public:
       {
       case KEYCODE_LEFT:
         RCLCPP_DEBUG(nh_->get_logger(), "LEFT");
-        angular = 1.0;
+        angular += 0.1;
         break;
       case KEYCODE_RIGHT:
         RCLCPP_DEBUG(nh_->get_logger(), "RIGHT");
-        angular = -1.0;
+        angular -= 0.1;
         break;
       case KEYCODE_UP:
         RCLCPP_DEBUG(nh_->get_logger(), "UP");
-        linear = 1.0;
+        linear += 0.1;
         break;
       case KEYCODE_DOWN:
         RCLCPP_DEBUG(nh_->get_logger(), "DOWN");
-        linear = -1.0;
-        break;
-      case KEYCODE_G:
-        RCLCPP_DEBUG(nh_->get_logger(), "G");
-        sendGoal(0.0f);
-        break;
-      case KEYCODE_T:
-        RCLCPP_DEBUG(nh_->get_logger(), "T");
-        sendGoal(0.7854f);
-        break;
-      case KEYCODE_R:
-        RCLCPP_DEBUG(nh_->get_logger(), "R");
-        sendGoal(1.5708f);
-        break;
-      case KEYCODE_E:
-        RCLCPP_DEBUG(nh_->get_logger(), "E");
-        sendGoal(2.3562f);
-        break;
-      case KEYCODE_D:
-        RCLCPP_DEBUG(nh_->get_logger(), "D");
-        sendGoal(3.1416f);
-        break;
-      case KEYCODE_C:
-        RCLCPP_DEBUG(nh_->get_logger(), "C");
-        sendGoal(-2.3562f);
-        break;
-      case KEYCODE_V:
-        RCLCPP_DEBUG(nh_->get_logger(), "V");
-        sendGoal(-1.5708f);
-        break;
-      case KEYCODE_B:
-        RCLCPP_DEBUG(nh_->get_logger(), "B");
-        sendGoal(-0.7854f);
+        linear -= 0.1;
         break;
       case KEYCODE_F:
         RCLCPP_DEBUG(nh_->get_logger(), "F");
-        cancelGoal();
+        linear = 0.0;
+        angular = 0.0;
         break;
       case KEYCODE_Q:
         RCLCPP_DEBUG(nh_->get_logger(), "quit");
         running = false;
+        linear = 0.0;
+        angular = 0.0;
         break;
       default:
         // This can happen if the read returned when there was no data, or
