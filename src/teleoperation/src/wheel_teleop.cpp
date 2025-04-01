@@ -206,7 +206,7 @@ public:
     puts("Reading from keyboard");
     puts("---------------------------");
     puts("Use arrow keys to move the robot.");
-    puts("Use S key to absolute stop.");
+    puts("Use F key to absolute stop.");
     puts("'Q' to quit.");
     double linear = 0.0;
     double angular = 0.0;
@@ -231,11 +231,11 @@ public:
       {
       case KEYCODE_LEFT:
         RCLCPP_DEBUG(nh_->get_logger(), "LEFT");
-        angular += 0.1;
+        angular += 0.01;
         break;
       case KEYCODE_RIGHT:
         RCLCPP_DEBUG(nh_->get_logger(), "RIGHT");
-        angular -= 0.1;
+        angular -= 0.01;
         break;
       case KEYCODE_UP:
         RCLCPP_DEBUG(nh_->get_logger(), "UP");
