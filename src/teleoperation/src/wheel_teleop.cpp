@@ -239,11 +239,11 @@ public:
         break;
       case KEYCODE_UP:
         RCLCPP_DEBUG(nh_->get_logger(), "UP");
-        linear += 0.1;
+        linear += 0.01;
         break;
       case KEYCODE_DOWN:
         RCLCPP_DEBUG(nh_->get_logger(), "DOWN");
-        linear -= 0.1;
+        linear -= 0.01;
         break;
       case KEYCODE_F:
         RCLCPP_DEBUG(nh_->get_logger(), "F");
